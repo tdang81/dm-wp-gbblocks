@@ -29,7 +29,7 @@ function render_block() {
 		return '<p>No posts</p>';
 	}
 
-	$output = '<ul>';
+	$output = '<div class="dm-gbblocks-sticky-posts"><ul>';
 
 	foreach ( $recent_posts as $post ) {
 		$post_id = $post['ID'];
@@ -41,6 +41,6 @@ function render_block() {
 		);
 	}
 
-	$output .= '</ul>';
+	$output .= '</ul></div>';
 	return $output;
 }

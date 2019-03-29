@@ -9,4 +9,4 @@
  * Webpack is compiling as the input file.
  */
 
-import './blocks/image-slider';
+import './blocks/sticky-posts';

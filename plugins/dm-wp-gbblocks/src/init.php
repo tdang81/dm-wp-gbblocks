@@ -57,4 +57,4 @@ function dm_wp_gbblocks_editor_assets() { // phpcs:ignore
 // Hook: Editor assets.
 add_action( 'enqueue_block_editor_assets', 'dm_wp_gbblocks_editor_assets' );
 
-require 'blocks/image-slider/block.php';
+require 'blocks/sticky-posts/block.php';
