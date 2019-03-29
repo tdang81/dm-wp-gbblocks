@@ -1,0 +1,32 @@
+version: '3.2'
+
+services:
+  wordpress:
+    image: wordpress:5.1.1
+    links:
+      - mysql:mysql
+    ports:
+      - 19051:80
+    environment:
+      WORDPRESS_DB_PASSWORD: test123
+      ABSPATH: /usr/src/wordpress/
+    volumes:
+      - ./plugins/dm-wp-gbblocks:/var/www/html/wp-content/plugins/dm-wp-gbblocks
+      - ./wordpress:/var/www/html/
+      - ./docker/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: test123
+      MYSQL_DATABASE: wordpress
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:4.7
+    links:
+      - mysql:mysql
+    ports:
+      - 19052:80
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: test123

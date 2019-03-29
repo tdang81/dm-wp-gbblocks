@@ -1,0 +1,15 @@
+#exclude all
+/*
+
+#include folders
+!/plugins
+!/docker
+
+#include files
+!/docker-compose.yml
+!/.gitignore
+!/README.md
+
+#include plugins
+/plugins/*
+!/plugins/dm-wp-gbblocks
